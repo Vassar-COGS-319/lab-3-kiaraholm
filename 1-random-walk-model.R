@@ -11,9 +11,26 @@
 
 random.walk.model <- function(samples, drift=0, sdrw=0.3, criterion=3){
   
+  responses <- vector()
+  latencies <- vector()
+  
+  for (i in c(1:samples)) {
+    
+    evidence <- 0 
+    counter <- 0
+    
+    while (abs(evidence) < criterion) {
+      evidence <- sum(evidence, rnorm(1, drift, sdrw))
+      counter <- counter + 1
+    }
+    
+    responses[i] <- sign(evidence)
+    latencies[i] <- counter
+  }
+ 
   output <- data.frame(
-    correct = accuracy.array,
-    rt = rt.array
+    correct = (responses == 1),
+    rt = latencies[] 
   )
   
   return(output)
