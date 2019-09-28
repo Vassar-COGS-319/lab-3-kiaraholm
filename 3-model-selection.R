@@ -39,6 +39,12 @@
 # we use to evaluate which model is a better descriptor of the data for the experiment?
 # Describe briefly how you might make this evaluation.
 
+# We could use information about the distribution of reaction times to evaluate which
+# model is a better descriptor of data. While the histogram for the random-walk model
+# demonstrates an exponential curve, the accumulator model shows a normal distribution
+# over the mean RT. I would make this evaluation based on its implications on the 
+# nature of decision-making.  
+
 acc.test <- accumulator.model(1000)
 acc.correct.data <- acc.test %>% filter(correct==TRUE)
 acc.incorrect.data <- acc.test %>% filter(correct==FALSE)
