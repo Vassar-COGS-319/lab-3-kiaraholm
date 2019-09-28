@@ -9,7 +9,7 @@
 # sdrw is the variability in the drift rate (default value is 0.3)
 # criterion is the threshold for a response (default value is 3)
 
-random.walk.model <- function(samples, drift=0, sdrw=0.3, criterion=3){
+random.walk.model <- function(samples, drift=0.01, sdrw=0.3, criterion=4.8){
   
   responses <- vector()
   latencies <- vector()
