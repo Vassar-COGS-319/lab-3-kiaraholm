@@ -45,6 +45,7 @@
 # over the mean RT. I would make this evaluation based on its implications on the 
 # nature of decision-making.  
 
+
 acc.test <- accumulator.model(1000)
 acc.correct.data <- acc.test %>% filter(correct==TRUE)
 acc.incorrect.data <- acc.test %>% filter(correct==FALSE)
@@ -58,3 +59,12 @@ rwalk.incorrect.data <- rwalk.test %>% filter(correct==FALSE)
 
 hist(rwalk.correct.data$rt)
 hist(rwalk.incorrect.data$rt)
+
+# (non-code related) REVISION:
+
+# It would be more accurate to describe the histogram for the RW model as very skewed instead of
+# one that looks like an exponential curve, and that this demonstrates a much higher variability 
+# for this model as you indicate. 
+
+# As a result of my description of the graphs it did not occur to me (yikes!) that it would be useful to
+# compare the graphs by looking at their standard deviations of RTs. 
